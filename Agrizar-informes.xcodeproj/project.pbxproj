@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A666FA72860D0E8008EDB85 /* InvernaderosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FA62860D0E8008EDB85 /* InvernaderosViewController.swift */; };
 		1A6E0AF3285900B000509678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF2285900B000509678 /* AppDelegate.swift */; };
 		1A6E0AF5285900B000509678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF4285900B000509678 /* SceneDelegate.swift */; };
 		1A6E0AF7285900B000509678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF6285900B000509678 /* ViewController.swift */; };
 		1A6E0AFA285900B000509678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF8285900B000509678 /* Main.storyboard */; };
-		1A6E0AFC285900C200509678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0AFB285900C200509678 /* Assets.xcassets */; };
 		1A6E0AFF285900C200509678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0AFD285900C200509678 /* LaunchScreen.storyboard */; };
+		1A6E0B0A2859146300509678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0B092859146200509678 /* Assets.xcassets */; };
+		1A9769BC285A5B07002CE7E5 /* GraficasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9769BB285A5B07002CE7E5 /* GraficasViewController.swift */; };
+		3735CC116FA5D1DB5DE237D0 /* Pods_Agrizar_informes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C31E4160C672A48E6DF8D6 /* Pods_Agrizar_informes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A666FA62860D0E8008EDB85 /* InvernaderosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvernaderosViewController.swift; sourceTree = "<group>"; };
 		1A6E0AEF285900B000509678 /* Agrizar-informes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agrizar-informes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6E0AF2285900B000509678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A6E0AF4285900B000509678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A6E0AF6285900B000509678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A6E0AF9285900B000509678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1A6E0AFB285900C200509678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A6E0AFE285900C200509678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6E0B00285900C200509678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A6E0B092859146200509678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A9769BB285A5B07002CE7E5 /* GraficasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficasViewController.swift; sourceTree = "<group>"; };
+		77C31E4160C672A48E6DF8D6 /* Pods_Agrizar_informes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Agrizar_informes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AA53BFA8FFC2C71402CAC9 /* Pods-Agrizar-informes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agrizar-informes.debug.xcconfig"; path = "Target Support Files/Pods-Agrizar-informes/Pods-Agrizar-informes.debug.xcconfig"; sourceTree = "<group>"; };
+		DF13040233A8953ABEBCBCC6 /* Pods-Agrizar-informes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agrizar-informes.release.xcconfig"; path = "Target Support Files/Pods-Agrizar-informes/Pods-Agrizar-informes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3735CC116FA5D1DB5DE237D0 /* Pods_Agrizar_informes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				1A6E0AF1285900B000509678 /* Agrizar-informes */,
 				1A6E0AF0285900B000509678 /* Products */,
+				45418E678D2DBCF810D7F1B0 /* Pods */,
+				572605CEB8B8B8DF15FB0695 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +71,30 @@
 				1A6E0AF4285900B000509678 /* SceneDelegate.swift */,
 				1A6E0AF6285900B000509678 /* ViewController.swift */,
 				1A6E0AF8285900B000509678 /* Main.storyboard */,
-				1A6E0AFB285900C200509678 /* Assets.xcassets */,
 				1A6E0AFD285900C200509678 /* LaunchScreen.storyboard */,
 				1A6E0B00285900C200509678 /* Info.plist */,
+				1A6E0B092859146200509678 /* Assets.xcassets */,
+				1A9769BB285A5B07002CE7E5 /* GraficasViewController.swift */,
+				1A666FA62860D0E8008EDB85 /* InvernaderosViewController.swift */,
 			);
 			path = "Agrizar-informes";
+			sourceTree = "<group>";
+		};
+		45418E678D2DBCF810D7F1B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81AA53BFA8FFC2C71402CAC9 /* Pods-Agrizar-informes.debug.xcconfig */,
+				DF13040233A8953ABEBCBCC6 /* Pods-Agrizar-informes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		572605CEB8B8B8DF15FB0695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77C31E4160C672A48E6DF8D6 /* Pods_Agrizar_informes.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A6E0B03285900C200509678 /* Build configuration list for PBXNativeTarget "Agrizar-informes" */;
 			buildPhases = (
+				AEF5498E095D1823A9EB0E05 /* [CP] Check Pods Manifest.lock */,
 				1A6E0AEB285900B000509678 /* Sources */,
 				1A6E0AEC285900B000509678 /* Frameworks */,
 				1A6E0AED285900B000509678 /* Resources */,
+				37BCDC1A0B7BB8A0CD6D82D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +158,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6E0AFF285900C200509678 /* LaunchScreen.storyboard in Resources */,
-				1A6E0AFC285900C200509678 /* Assets.xcassets in Resources */,
+				1A6E0B0A2859146300509678 /* Assets.xcassets in Resources */,
 				1A6E0AFA285900B000509678 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37BCDC1A0B7BB8A0CD6D82D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agrizar-informes/Pods-Agrizar-informes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agrizar-informes/Pods-Agrizar-informes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agrizar-informes/Pods-Agrizar-informes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEF5498E095D1823A9EB0E05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Agrizar-informes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A6E0AEB285900B000509678 /* Sources */ = {
@@ -139,7 +213,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6E0AF7285900B000509678 /* ViewController.swift in Sources */,
+				1A666FA72860D0E8008EDB85 /* InvernaderosViewController.swift in Sources */,
 				1A6E0AF3285900B000509678 /* AppDelegate.swift in Sources */,
+				1A9769BC285A5B07002CE7E5 /* GraficasViewController.swift in Sources */,
 				1A6E0AF5285900B000509678 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +358,7 @@
 		};
 		1A6E0B04285900C200509678 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81AA53BFA8FFC2C71402CAC9 /* Pods-Agrizar-informes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,14 +370,16 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.checkList.agrizar.Agrizar-informes";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agrizar.Agrizar-informes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -310,6 +389,7 @@
 		};
 		1A6E0B05285900C200509678 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF13040233A8953ABEBCBCC6 /* Pods-Agrizar-informes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,14 +401,16 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.checkList.agrizar.Agrizar-informes";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agrizar.Agrizar-informes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
