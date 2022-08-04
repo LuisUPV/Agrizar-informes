@@ -13,8 +13,11 @@ class ViewController: UIViewController {
     
     public var frutoid = 0
     
+    var urlInvernaderoPimiento = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimientoInvernaderos.php"
+    
     let urlDatos = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderos.json")!
-    var urlPhp = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php=fruto=2")
+    var urlPhp = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?fruto=")
+    var cadena = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?fruto="
     
     var invs:[Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                       0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -171,6 +174,8 @@ class ViewController: UIViewController {
         var inv72: Int
     }
     
+    //MARK: - Carga Vista
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -178,20 +183,37 @@ class ViewController: UIViewController {
         URLCache.shared.diskCapacity = 0
         URLCache.shared.memoryCapacity = 0
         
+        self.cargando.transform = CGAffineTransform(scaleX: 3, y: 3)
+        
         navegation.backButtonTitle = "Regresar"
 
     }
+    
+    //MARK: - Botón
 
     @IBAction func SeleccionaFruto(_ sender: UIButton) {
         frutoid = sender.tag
+        urlPhp = URL(string: cadena + String(frutoid))
+        cargando.startAnimating()
         if(frutoid==1){
-            mandarDatosALosInvernaderos()
-        }else{
-            cargando.startAnimating()
+            urlPhp = URL(string: urlInvernaderoPimiento)
             self.consultaPhp()
             DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                 self.tomaDatos()
-                DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                    self.mandarDatosALosInvernaderosPimiento()
+                    self.cargando.stopAnimating()
+                }
+            }
+            //mandarDatosALosInvernaderos()
+            //mandarDatosInvernaderosPimiento()
+            //pruebaPastel()
+        }else{
+            
+            self.consultaPhp()
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                self.tomaDatos()
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
                     self.mandarDatosALosInvernaderos()
                     self.cargando.stopAnimating()
                 }
@@ -205,6 +227,20 @@ class ViewController: UIViewController {
         
     }
     
+    
+    func pruebaPastel(){
+        let viewController = self.storyboard?.instantiateViewController(identifier: "GraficasPimientoColorViewController") as? GraficasPimientoColorViewController
+        viewController?.frutoid = frutoid
+        self.navigationController?.pushViewController(viewController!, animated: true)
+    }
+    
+    
+    func mandarDatosALosInvernaderosPimiento(){
+        let viewController = self.storyboard?.instantiateViewController(identifier: "InvernaderosPimientoViewController") as? InvernaderosPimientoViewController
+        viewController?.frutoid = frutoid
+        viewController?.invs = invs
+        self.navigationController?.pushViewController(viewController!, animated: true)
+    }
     
     func mandarDatosALosInvernaderos(){
         // iterate from i = 1 to 1 = 3
