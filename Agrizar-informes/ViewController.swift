@@ -11,13 +11,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var navegation: UINavigationItem!
     @IBOutlet weak var cargando: UIActivityIndicatorView!
     
+    var validarSesion = 0
+    var usuarioId = 0
+    
     public var frutoid = 0
     
-    var urlInvernaderoPimiento = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimientoInvernaderos.php"
+    var urlInvernaderoPimiento = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimientoInvernaderos.php"
     
-    let urlDatos = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderos.json")!
-    var urlPhp = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?fruto=")
-    var cadena = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?fruto="
+    let urlDatos = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderos.json")!
+    var urlPhp = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?fruto=")!
+    var cadena = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?fruto="
     
     var invs:[Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                       0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -183,7 +186,7 @@ class ViewController: UIViewController {
         URLCache.shared.diskCapacity = 0
         URLCache.shared.memoryCapacity = 0
         
-        self.cargando.transform = CGAffineTransform(scaleX: 3, y: 3)
+        self.cargando.transform = CGAffineTransform(scaleX: 2, y: 2)
         
         navegation.backButtonTitle = "Regresar"
 
@@ -193,12 +196,14 @@ class ViewController: UIViewController {
 
     @IBAction func SeleccionaFruto(_ sender: UIButton) {
         frutoid = sender.tag
-        urlPhp = URL(string: cadena + String(frutoid))
+        urlPhp = URL(string: cadena + String(frutoid))!
         cargando.startAnimating()
         if(frutoid==1){
-            urlPhp = URL(string: urlInvernaderoPimiento)
-            self.consultaPhp()
-            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            print("Clicado botón de fruto")
+            urlPhp = URL(string: urlInvernaderoPimiento)!
+            print(urlPhp)
+            consultaPhp()
+            DispatchQueue.main.asyncAfter(deadline: .now()+5) {
                 self.tomaDatos()
                 DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                     self.mandarDatosALosInvernaderosPimiento()
@@ -211,9 +216,9 @@ class ViewController: UIViewController {
         }else{
             
             self.consultaPhp()
-            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+3.5) {
                 self.tomaDatos()
-                DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                     self.mandarDatosALosInvernaderos()
                     self.cargando.stopAnimating()
                 }
@@ -352,21 +357,40 @@ class ViewController: UIViewController {
                     }
                     catch{
                         print("Error en toma de datos JSON!")
+                        print(error)
                     }
                 }
             }
             task.resume()
         }
     
+//    public func consultaPhp()
+//        {
+//            let session = URLSession.shared
+//            let task = session.dataTask(with: urlPhp!) { (data, response, error) in
+//                if error == nil && data != nil {
+//                    do{
+//                        //let infoJson = try JSONDecoder().decode(production.self,from:data!)
+//                        print("urlFinal: ",self.urlPhp!)
+//                        print("Consulta PHP")
+//                    }
+//                    catch{
+//                        print("Error en consulta php!")
+//                    }
+//                }
+//            }
+//            task.resume()
+//        }
+    
     public func consultaPhp()
         {
             let session = URLSession.shared
-            let task = session.dataTask(with: urlPhp!) { (data, response, error) in
+            let task = session.dataTask(with: urlPhp) { (data, response, error) in
                 if error == nil && data != nil {
                     do{
                         //let infoJson = try JSONDecoder().decode(production.self,from:data!)
-                        print("urlFinal: ",self.urlPhp!)
-                        print("Consulta PHP")
+                        print("urlFinalPhp: ",self.urlPhp)
+                        print("Consulta PHP para gráfica")
                     }
 //                    catch{
 //                        print("Error en consulta php!")
@@ -375,5 +399,7 @@ class ViewController: UIViewController {
             }
             task.resume()
         }
+    
+    
 }
 

@@ -342,27 +342,32 @@ class InvernaderosPimientoViewController: UIViewController {
         var sumaSuperficie: Int
     }
     
-    var urlPhpInvernadero = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?")
     
-    let cadenaUrlPhpPimiento = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimiento2.php"
+    //http://200.76.176.236/ internet pruebas
+    //http://192.168.1.36/ local
+    //http://200.94.50.150/ internet producción
     
-    var cadenaUrlGenerica = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimiento2.php"
+    var urlPhpInvernadero = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?")
+    
+    let cadenaUrlPhpPimiento = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimientoPastel.php"
+    
+    var cadenaUrlGenerica = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimientoPastel.php"
     
     
     let urlGpoZaratini = URL(string: "http://172.26.48.1/kudePOO/aplicacion/Apps/php/test.json")!
-    let urlPhp = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/Prueba.php")!
+    let urlPhp = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/Prueba.php")!
     
-    let urlDatos = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/datos.json")!
+    let urlDatos = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/datos.json")!
     
-    let urlDatosInvernadero = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderos.json")!
+    let urlDatosInvernadero = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderos.json")!
     
-    var urlFinal = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/pimiento.php")!
+    var urlFinal = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/pimiento.php")!
 
     var cadenaPhpInvernadero = ""
     
-    var urlTodosLosInvernaderosPorColor = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimiento3.php")!
+    var urlTodosLosInvernaderosPorColor = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimientoBarras.php")!
     
-    var cadenaTodosLosInvernaderosPorColor = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimiento3.php"
+    var cadenaTodosLosInvernaderosPorColor = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimientoBarras.php"
     
 
     var startDate = Date()
@@ -476,9 +481,9 @@ class InvernaderosPimientoViewController: UIViewController {
         
         animacionCarga.startAnimating()
         self.consultaPhp()
-        DispatchQueue.main.asyncAfter(deadline: .now()+4.5){
+        DispatchQueue.main.asyncAfter(deadline: .now()+5){
             self.tomaDatos()
-            DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                 self.animacionCarga.stopAnimating()
                 self.mandarDatosALaGraficaPastel()
             }
@@ -509,6 +514,11 @@ class InvernaderosPimientoViewController: UIViewController {
     
     func mandarDatosALaGraficaBarras(){
         let viewController = self.storyboard?.instantiateViewController(identifier: "GraficasPimientoViewController") as? GraficasPimientoViewController
+        viewController?.kilosrr = kilosrr
+        viewController?.cajasrr = cajasrr
+        viewController?.kilospp = kilospp
+        viewController?.cajaspp = cajaspp
+        viewController?.nombreColorPimiento = nombreColorPimiento
         viewController?.invernadero = invernadero
         viewController?.cadenaConsultaFinal = cadena
         viewController?.idColorPimiento = idColorPimiento
@@ -528,14 +538,15 @@ class InvernaderosPimientoViewController: UIViewController {
             
             self.animacionCarga.startAnimating()
             if(self.frutoid==1){
-                self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
-                print(self.urlPhpInvernadero!)
-                self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
-                    self.tomaDatosInvernadero()
+                self.cadenaSinFecha = self.cadenaTodosLosInvernaderosPorColor
+                self.urlTodosLosInvernaderosPorColor = URL(string: self.cadenaTodosLosInvernaderosPorColor  + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid) + "&fechaInicio=" + self.fechaMenosUnMeseFormateada + "&fechaFin=" + self.fechaActual)!
+                print(self.urlTodosLosInvernaderosPorColor)
+                self.consultaPhp2()
+                DispatchQueue.main.asyncAfter(deadline: .now()+6){
+                    self.tomaDatos2()
                     DispatchQueue.main.asyncAfter(deadline: .now()+1){
                         self.animacionCarga.stopAnimating()
-                        self.dibujarInvernaderos()
+                        self.mandarDatosALaGraficaBarras()
                     }
                 }
                 
@@ -548,17 +559,17 @@ class InvernaderosPimientoViewController: UIViewController {
             self.colorPimiento.image = UIImage(imageLiteralResourceName: "pim-amarillo")
             self.nombreColorPimiento = "pim-amarillo"
             self.idColorPimiento = 171
-            
+            self.cadenaSinFecha = self.cadenaTodosLosInvernaderosPorColor
             self.animacionCarga.startAnimating()
             if(self.frutoid==1){
-                self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
-                print(self.urlPhpInvernadero!)
-                self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
-                    self.tomaDatosInvernadero()
+                self.urlTodosLosInvernaderosPorColor = URL(string: self.cadenaTodosLosInvernaderosPorColor  + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid) + "&fechaInicio=" + self.fechaMenosUnMeseFormateada + "&fechaFin=" + self.fechaActual)!
+                print(self.urlTodosLosInvernaderosPorColor)
+                self.consultaPhp2()
+                DispatchQueue.main.asyncAfter(deadline: .now()+6){
+                    self.tomaDatos2()
                     DispatchQueue.main.asyncAfter(deadline: .now()+1){
                         self.animacionCarga.stopAnimating()
-                        self.dibujarInvernaderos()
+                        self.mandarDatosALaGraficaBarras()
                     }
                 }
                 
@@ -568,17 +579,17 @@ class InvernaderosPimientoViewController: UIViewController {
             self.colorPimiento.image = UIImage(imageLiteralResourceName: "pim-verde")
             self.nombreColorPimiento = "pim-verde"
             self.idColorPimiento = 176
-            
+            self.cadenaSinFecha = self.cadenaTodosLosInvernaderosPorColor
             self.animacionCarga.startAnimating()
             if(self.frutoid==1){
-                self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
-                print(self.urlPhpInvernadero!)
-                self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
-                    self.tomaDatosInvernadero()
+                self.urlTodosLosInvernaderosPorColor = URL(string: self.cadenaTodosLosInvernaderosPorColor  + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid) + "&fechaInicio=" + self.fechaMenosUnMeseFormateada + "&fechaFin=" + self.fechaActual)!
+                print(self.urlTodosLosInvernaderosPorColor)
+                self.consultaPhp2()
+                DispatchQueue.main.asyncAfter(deadline: .now()+6){
+                    self.tomaDatos2()
                     DispatchQueue.main.asyncAfter(deadline: .now()+1){
                         self.animacionCarga.stopAnimating()
-                        self.dibujarInvernaderos()
+                        self.mandarDatosALaGraficaBarras()
                     }
                 }
                 
@@ -588,17 +599,17 @@ class InvernaderosPimientoViewController: UIViewController {
             self.colorPimiento.image = UIImage(imageLiteralResourceName: "pim-naranja")
             self.nombreColorPimiento = "pim-naranja"
             self.idColorPimiento = 173
-            
+            self.cadenaSinFecha = self.cadenaTodosLosInvernaderosPorColor
             self.animacionCarga.startAnimating()
             if(self.frutoid==1){
-                self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
-                print(self.urlPhpInvernadero!)
-                self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
-                    self.tomaDatosInvernadero()
+                self.urlTodosLosInvernaderosPorColor = URL(string: self.cadenaTodosLosInvernaderosPorColor  + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid) + "&fechaInicio=" + self.fechaMenosUnMeseFormateada + "&fechaFin=" + self.fechaActual)!
+                print(self.urlTodosLosInvernaderosPorColor)
+                self.consultaPhp2()
+                DispatchQueue.main.asyncAfter(deadline: .now()+6){
+                    self.tomaDatos2()
                     DispatchQueue.main.asyncAfter(deadline: .now()+1){
                         self.animacionCarga.stopAnimating()
-                        self.dibujarInvernaderos()
+                        self.mandarDatosALaGraficaBarras()
                     }
                 }
                 
@@ -608,13 +619,13 @@ class InvernaderosPimientoViewController: UIViewController {
             self.colorPimiento.image = UIImage(imageLiteralResourceName: "pim-aloha")
             self.nombreColorPimiento = "pim-aloha"
             self.idColorPimiento = 169
-            //urldatos y urlfinal
+            self.cadenaSinFecha = self.cadenaTodosLosInvernaderosPorColor
             self.animacionCarga.startAnimating()
             if(self.frutoid==1){
                 self.urlTodosLosInvernaderosPorColor = URL(string: self.cadenaTodosLosInvernaderosPorColor  + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid) + "&fechaInicio=" + self.fechaMenosUnMeseFormateada + "&fechaFin=" + self.fechaActual)!
                 print(self.urlTodosLosInvernaderosPorColor)
                 self.consultaPhp2()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+6){
                     self.tomaDatos2()
                     DispatchQueue.main.asyncAfter(deadline: .now()+1){
                         self.animacionCarga.stopAnimating()

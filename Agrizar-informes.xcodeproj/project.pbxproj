@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A0CD71728981E3B003B7324 /* InvernaderosPimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0CD71628981E3B003B7324 /* InvernaderosPimientoViewController.swift */; };
+		1A3F4BAE28AC1AC2007F52B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F4BAD28AC1AC0007F52B0 /* LoginViewController.swift */; };
+		1A63C52728BE51D900CC5D96 /* MenuProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A63C52628BE51D900CC5D96 /* MenuProductionViewController.swift */; };
 		1A666FA72860D0E8008EDB85 /* InvernaderosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FA62860D0E8008EDB85 /* InvernaderosViewController.swift */; };
 		1A6E0AF3285900B000509678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF2285900B000509678 /* AppDelegate.swift */; };
 		1A6E0AF5285900B000509678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF4285900B000509678 /* SceneDelegate.swift */; };
@@ -15,6 +17,7 @@
 		1A6E0AFA285900B000509678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0AF8285900B000509678 /* Main.storyboard */; };
 		1A6E0AFF285900C200509678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0AFD285900C200509678 /* LaunchScreen.storyboard */; };
 		1A6E0B0A2859146300509678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E0B092859146200509678 /* Assets.xcassets */; };
+		1A7DD95D28BD322F002C0203 /* MenuOpcionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DD95C28BD322F002C0203 /* MenuOpcionesViewController.swift */; };
 		1A8EE68428931B0E006F05B4 /* GraficasPimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8EE68328931B0E006F05B4 /* GraficasPimientoViewController.swift */; };
 		1A8EE68628933F04006F05B4 /* GraficasPimientoColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8EE68528933F04006F05B4 /* GraficasPimientoColorViewController.swift */; };
 		1A9769BC285A5B07002CE7E5 /* GraficasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9769BB285A5B07002CE7E5 /* GraficasViewController.swift */; };
@@ -23,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		1A0CD71628981E3B003B7324 /* InvernaderosPimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvernaderosPimientoViewController.swift; sourceTree = "<group>"; };
+		1A3F4BAD28AC1AC0007F52B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1A63C52628BE51D900CC5D96 /* MenuProductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProductionViewController.swift; sourceTree = "<group>"; };
 		1A666FA62860D0E8008EDB85 /* InvernaderosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvernaderosViewController.swift; sourceTree = "<group>"; };
 		1A6E0AEF285900B000509678 /* Agrizar-informes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agrizar-informes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6E0AF2285900B000509678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		1A6E0AFE285900C200509678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6E0B00285900C200509678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A6E0B092859146200509678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A7DD95C28BD322F002C0203 /* MenuOpcionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcionesViewController.swift; sourceTree = "<group>"; };
 		1A8EE68328931B0E006F05B4 /* GraficasPimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficasPimientoViewController.swift; sourceTree = "<group>"; };
 		1A8EE68528933F04006F05B4 /* GraficasPimientoColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficasPimientoColorViewController.swift; sourceTree = "<group>"; };
 		1A9769BB285A5B07002CE7E5 /* GraficasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficasViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				1A8EE68328931B0E006F05B4 /* GraficasPimientoViewController.swift */,
 				1A8EE68528933F04006F05B4 /* GraficasPimientoColorViewController.swift */,
 				1A0CD71628981E3B003B7324 /* InvernaderosPimientoViewController.swift */,
+				1A3F4BAD28AC1AC0007F52B0 /* LoginViewController.swift */,
+				1A7DD95C28BD322F002C0203 /* MenuOpcionesViewController.swift */,
+				1A63C52628BE51D900CC5D96 /* MenuProductionViewController.swift */,
 			);
 			path = "Agrizar-informes";
 			sourceTree = "<group>";
@@ -221,6 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A63C52728BE51D900CC5D96 /* MenuProductionViewController.swift in Sources */,
+				1A7DD95D28BD322F002C0203 /* MenuOpcionesViewController.swift in Sources */,
+				1A3F4BAE28AC1AC2007F52B0 /* LoginViewController.swift in Sources */,
 				1A6E0AF7285900B000509678 /* ViewController.swift in Sources */,
 				1A666FA72860D0E8008EDB85 /* InvernaderosViewController.swift in Sources */,
 				1A6E0AF3285900B000509678 /* AppDelegate.swift in Sources */,

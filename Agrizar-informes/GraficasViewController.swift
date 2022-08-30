@@ -39,21 +39,23 @@ class GraficasViewController: UIViewController {
     @IBOutlet weak var fechaInicial: UIDatePicker!
     @IBOutlet weak var fechaFinal: UIDatePicker!
     
-    
+    //http://200.76.176.236/ internet pruebas
+    //http://192.168.1.36/ local
+    //http://200.94.50.150/ internet producción
 
     let urlGpoZaratini = URL(string: "http://172.26.48.1/kudePOO/aplicacion/Apps/php/test.json")!
     
-    let url = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/prueba2.json")!
+    let url = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/prueba2.json")!
     
-    let url3 = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/Prueba.php")!
+    let url3 = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/Prueba.php")!
     
-    let url4 = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/test.json")!
+    let url4 = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/test.json")!
     
-    let url2 = URL(string:"http://192.168.1.36/kudePOO/aplicacion/Apps/inspeccionPallets/php/traerPallet.php?pallet=PIM-35250")!
+    let url2 = URL(string:"http://200.94.50.150/kudePOO/aplicacion/Apps/inspeccionPallets/php/traerPallet.php?pallet=PIM-35250")!
     
-    var urlCadenaConsultaPHP = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/datos.json")!
+    var urlCadenaConsultaPHP = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/datos.json")!
     
-    var urlCadenaTomaDatos = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/datos.json")!
+    var urlCadenaTomaDatos = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/datos.json")!
     
     var  cadena = ""
     
@@ -75,7 +77,7 @@ class GraficasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.animacionCarga.transform = CGAffineTransform(scaleX: 3, y: 3)
+        self.animacionCarga.transform = CGAffineTransform(scaleX: 2, y: 2)
         if(invernadero==1000){
             invernaderoImagen.image = UIImage(imageLiteralResourceName: "A")
         }
@@ -90,6 +92,21 @@ class GraficasViewController: UIViewController {
         }
         else if(invernadero==5000){
             invernaderoImagen.image = UIImage(imageLiteralResourceName: "PEP")
+        }
+        else if(invernadero==6000){
+            invernaderoImagen.image = UIImage(imageLiteralResourceName: "ESP")
+        }
+        else if(invernadero==7000){
+            invernaderoImagen.image = UIImage(imageLiteralResourceName: "ARA")
+        }
+        else if(invernadero==8000){
+            invernaderoImagen.image = UIImage(imageLiteralResourceName: "FRA")
+        }
+        else if(invernadero==9000){
+            invernaderoImagen.image = UIImage(imageLiteralResourceName: "ZAR")
+        }
+        else if(invernadero==10000){
+            invernaderoImagen.image = UIImage(imageLiteralResourceName: "FRE")
         }
         else{
             invernaderoImagen.image = UIImage(imageLiteralResourceName: String(invernadero) )
@@ -122,7 +139,7 @@ class GraficasViewController: UIViewController {
         }else if(frutoid==8){
             imagenPimiento.image = UIImage(imageLiteralResourceName: "yowser")
         }else if(frutoid==9){
-            imagenPimiento.image = UIImage(imageLiteralResourceName: "red sedless osp")
+            imagenPimiento.image = UIImage(imageLiteralResourceName: "red seedless osp")
         }else if(frutoid==10){
             imagenPimiento.image = UIImage(imageLiteralResourceName: "jalapeño")
         }else if(frutoid==11){
@@ -163,10 +180,10 @@ class GraficasViewController: UIViewController {
         
         animacionCarga.startAnimating()
         consultaPHP()
-        DispatchQueue.main.asyncAfter(deadline: .now()+2){
+        DispatchQueue.main.asyncAfter(deadline: .now()+2.5){
             
             self.tomaDatos()
-            DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                 self.generaGraficoBarra()
                 self.animacionCarga.stopAnimating()
             }
@@ -233,8 +250,17 @@ class GraficasViewController: UIViewController {
             }
             task.resume()
         }
+//    pieView.chartDescription.enabled = true
+//    pieView.drawHoleEnabled = true
+//    pieView.holeColor = UIColor.clear
+//    pieView.rotationAngle = 0
+//    pieView.rotationEnabled = true
+//    pieView.isUserInteractionEnabled = true
     
     func generaGraficoBarra(){
+
+        barChart.fitBars = true
+
         print("kilosrr: ",kilosrr)
         print("kilospp: ",kilospp)
         print("cajasrr: ",cajasrr)
@@ -246,17 +272,57 @@ class GraficasViewController: UIViewController {
         let cajas2 = BarChartDataEntry(x: 4, y: Double(cajasrr))
 
              
-        let dataSet = BarChartDataSet(entries: [kilos1], label: "Kilos producidos")
+        let dataSet = BarChartDataSet(entries: [kilos1])
         dataSet.setColor(UIColor.systemRed)
-        let dataSet2 = BarChartDataSet(entries: [cajas1], label: "Cajas producidas")
+//        dataSet.label = ""
+        
+        let dataSet2 = BarChartDataSet(entries: [cajas1])
         dataSet2.setColor(UIColor.systemOrange)
-        let dataSet3 = BarChartDataSet(entries: [kilos2], label: "Kilos recibidos")
+//        dataSet2.label = ""
+        let dataSet3 = BarChartDataSet(entries: [kilos2])
         dataSet3.setColor(UIColor.systemBlue)
-        let dataSet4 = BarChartDataSet(entries: [cajas2], label: "Cajas recibidas")
+//        dataSet3.label = ""
+        let dataSet4 = BarChartDataSet(entries: [cajas2])
         dataSet4.setColor(UIColor.systemCyan)
+//        dataSet4.label = ""
+        
+//        let descripciones = ["","Kilos producidos", "Cajas producidas", "Kilos recibidos", "Cajas recibidas"]
         
         let data = BarChartData(dataSets: [dataSet,dataSet2,dataSet3,dataSet4])
         //let data2 = BarChartData(dataSets: [dataSet2])
+        
+        barChart.animate(yAxisDuration: 1.5 , easingOption: .easeInOutCubic)
+        
+//        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: descripciones)
+        //xAxis.valueFormatter = IndexAxisValueFormatter(values: data )
+//        barChart.xAxis.labelRotationAngle = -25
+        barChart.legend.enabled = false
+        barChart.pinchZoomEnabled = false
+        barChart.setScaleEnabled(false)
+        barChart.doubleTapToZoomEnabled = false
+        barChart.xAxis.drawAxisLineEnabled = true
+        barChart.xAxis.drawGridLinesEnabled = true
+        barChart.xAxis.granularityEnabled = true
+//        barChart.xAxis.labelPosition = .bottom
+//        barChart.xAxis.setLabelCount(descripciones.count, force: false)
+//        barChart.xAxis.axisMaximum = Double(descripciones.count)
+        let xAxis = barChart.xAxis
+//            xAxis.labelPosition = .bottom
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawGridLinesEnabled = true
+            xAxis.granularityEnabled = true
+//            xAxis.labelRotationAngle = -25
+//            xAxis.setLabelCount(descripciones.count, force: false)
+//            xAxis.valueFormatter = IndexAxisValueFormatter(values: descripciones)
+//        xAxis.axisMaximum = Double(descripciones.count)
+        //xAxis.axisLineColor = .systemGreen
+        //xAxis.labelTextColor = .systemBrown
+        let rightAxis = barChart.rightAxis
+        rightAxis.enabled = false
+
+
+        
+        
         barChart.data = data
         barChart.notifyDataSetChanged()
     }

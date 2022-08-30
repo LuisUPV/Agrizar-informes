@@ -35,9 +35,12 @@ class GraficasPimientoColorViewController: UIViewController {
     var kilosPimAloha = 0.0
     
     var cadenaSinFecha2 = ""
+    //http://200.76.176.236/ internet pruebas
+    //http://192.168.1.36/ local
+    //http://200.94.50.150/ internet prodcuccion
 
-    var urlCadenaConsultaPHP = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimiento2.php")!
-    var urlCadenaTomaDatos = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/datos.json")!
+    var urlCadenaConsultaPHP = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimientoPastel.php")!
+    var urlCadenaTomaDatos = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/datos.json")!
     
     
     public struct production: Decodable{
@@ -109,10 +112,10 @@ class GraficasPimientoColorViewController: UIViewController {
         
         animacionCarga.startAnimating()
         consultaPHP()
-        DispatchQueue.main.asyncAfter(deadline: .now()+3){
+        DispatchQueue.main.asyncAfter(deadline: .now()+3.5){
             
             self.tomaDatos()
-            DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                 self.generaGraficoPastel()
                 self.animacionCarga.stopAnimating()
             }
@@ -135,6 +138,7 @@ class GraficasPimientoColorViewController: UIViewController {
         pieView.rotationAngle = 0
         pieView.rotationEnabled = true
         pieView.isUserInteractionEnabled = true
+        pieView.animate(xAxisDuration: 1.5, easingOption: .easeInOutCubic)
                 
         //pieView.legend.enabled = true
         

@@ -313,37 +313,41 @@ class InvernaderosViewController: UIViewController {
         var superficie : Int
     }
     
-    var urlPhpInvernadero = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?")
+    //http://200.76.176.236/ internet pruebas
+    //http://192.168.1.36/ local
+    //http://200.94.50.150/ internet producción
     
-    let cadenaUrlPhpPimiento = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPimiento.php"
-    let cadenaUrlPhpCampari = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaCampari.php"
-    let cadenaUrlPhpShishito = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaShishito.php"
-    let cadenaUrlPhpJalapenio = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaJalapenio.php"
-    let cadenaUrlPhpPepino = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaPepino.php"
-    let cadenaUrlPhpTwister = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaTwister.php"
-    let cadenaUrlPhpOneSweet = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaOneSweet.php"
-    let cadenaUrlPhpYowser = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaYowser.php"
-    let cadenaUrlPhpRedSeedless = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaRedSeedless.php"
-    let cadenaUrlPhpEsparrago = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaEsparrago.php"
-    let cadenaUrlPhpKaboom = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaKaboom.php"
-    let cadenaUrlPhpArandano = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaArandano.php"
-    let cadenaUrlPhpFrambuesa = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaFrambuesa.php"
-    let cadenaUrlPhpZarzamora = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaZarzamora.php"
-    let cadenaUrlPhpFresa = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/consultaFresa.php"
+    var urlPhpInvernadero = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php?")
+    
+    let cadenaUrlPhpPimiento = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPimiento.php"
+    let cadenaUrlPhpCampari = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaCampari.php"
+    let cadenaUrlPhpShishito = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaShishito.php"
+    let cadenaUrlPhpJalapenio = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaJalapenio.php"
+    let cadenaUrlPhpPepino = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaPepino.php"
+    let cadenaUrlPhpTwister = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaTwister.php"
+    let cadenaUrlPhpOneSweet = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaOneSweet.php"
+    let cadenaUrlPhpYowser = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaYowser.php"
+    let cadenaUrlPhpRedSeedless = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaRedSeedless.php"
+    let cadenaUrlPhpEsparrago = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaEsparrago.php"
+    let cadenaUrlPhpKaboom = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaKaboom.php"
+    let cadenaUrlPhpArandano = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaArandano.php"
+    let cadenaUrlPhpFrambuesa = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaFrambuesa.php"
+    let cadenaUrlPhpZarzamora = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaZarzamora.php"
+    let cadenaUrlPhpFresa = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/consultaFresa.php"
     
     
-    var cadenaPhpInvernadero = "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php"
+    var cadenaPhpInvernadero = "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderosPorFruto.php"
     var cadenaUrlGenerica = ""
     
     
     let urlGpoZaratini = URL(string: "http://172.26.48.1/kudePOO/aplicacion/Apps/php/test.json")!
-    let urlPhp = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/Prueba.php")!
+    let urlPhp = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/Prueba.php")!
     
-    let urlDatos = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/datos.json")!
+    let urlDatos = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/datos.json")!
     
-    let urlDatosInvernadero = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/invernaderos.json")!
+    let urlDatosInvernadero = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/invernaderos.json")!
     
-    var urlFinal = URL(string: "http://192.168.1.36/kudePOO/aplicacion/Apps/php/pimiento.php")!
+    var urlFinal = URL(string: "http://200.94.50.150/kudePOO/aplicacion/Apps/php/pimiento.php")!
 
     
 
@@ -515,6 +519,10 @@ class InvernaderosViewController: UIViewController {
             //cadena = cadenaUrlGenerica + cadenaFruto + String(frutoid) + cadenaColor + String(self.idColorPimiento) + cadenaInvernadero + "EX" + "&fechaInicio=15-04-2022&fechaFin=15-06-2022"
             cadenaSinFecha = cadenaUrlGenerica + cadenaFruto + String(frutoid) + cadenaColor + String(self.idColorPimiento) + cadenaInvernadero + "PEBBLE"
             cadena = cadenaSinFecha + "&fechaInicio=" + fechaMenosTresMesesFormateada + "&fechaFin=" + fechaActual
+        }else if(sender.tag==6000){
+            //cadena = cadenaUrlGenerica + cadenaFruto + String(frutoid) + cadenaColor + String(self.idColorPimiento) + cadenaInvernadero + "EX" + "&fechaInicio=15-04-2022&fechaFin=15-06-2022"
+            cadenaSinFecha = cadenaUrlGenerica + cadenaFruto + String(frutoid) + cadenaColor + String(self.idColorPimiento) + cadenaInvernadero + "ESP"
+            cadena = cadenaSinFecha + "&fechaInicio=" + fechaMenosTresMesesFormateada + "&fechaFin=" + fechaActual
         }else{
             //cadena = cadenaUrlGenerica + cadenaFruto + String(frutoid) + cadenaColor + String(self.idColorPimiento) + cadenaInvernadero + String(sender.tag) + "&fechaInicio=15-04-2022&fechaFin=15-06-2022"
             cadenaSinFecha = cadenaUrlGenerica + cadenaFruto + String(frutoid) + cadenaColor + String(self.idColorPimiento) + cadenaInvernadero + String(sender.tag)
@@ -530,9 +538,9 @@ class InvernaderosViewController: UIViewController {
         if(nombreColorPimiento != "pim-gris" || frutoid != 1){
             animacionCarga.startAnimating()
             self.consultaPhp()
-            DispatchQueue.main.asyncAfter(deadline: .now()+4.5){
+            DispatchQueue.main.asyncAfter(deadline: .now()+5){
                 self.tomaDatos()
-                DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                     self.animacionCarga.stopAnimating()
                     self.mandarDatosALaGrafica()
                 }
@@ -591,9 +599,9 @@ class InvernaderosViewController: UIViewController {
                 self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
                 print(self.urlPhpInvernadero!)
                 self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.5){
                     self.tomaDatosInvernadero()
-                    DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                         self.animacionCarga.stopAnimating()
                         self.dibujarInvernaderos()
                     }
@@ -614,9 +622,9 @@ class InvernaderosViewController: UIViewController {
                 self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
                 print(self.urlPhpInvernadero!)
                 self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.5){
                     self.tomaDatosInvernadero()
-                    DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                         self.animacionCarga.stopAnimating()
                         self.dibujarInvernaderos()
                     }
@@ -634,9 +642,9 @@ class InvernaderosViewController: UIViewController {
                 self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
                 print(self.urlPhpInvernadero!)
                 self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.5){
                     self.tomaDatosInvernadero()
-                    DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                         self.animacionCarga.stopAnimating()
                         self.dibujarInvernaderos()
                     }
@@ -654,9 +662,9 @@ class InvernaderosViewController: UIViewController {
                 self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
                 print(self.urlPhpInvernadero!)
                 self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.5){
                     self.tomaDatosInvernadero()
-                    DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                         self.animacionCarga.stopAnimating()
                         self.dibujarInvernaderos()
                     }
@@ -674,9 +682,9 @@ class InvernaderosViewController: UIViewController {
                 self.urlPhpInvernadero = URL(string: self.cadenaPhpInvernadero + "?color=" + String(self.idColorPimiento) + "&fruto=" + String(self.frutoid))!
                 print(self.urlPhpInvernadero!)
                 self.consultaPhpInvernadero()
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.5){
                     self.tomaDatosInvernadero()
-                    DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
                         self.animacionCarga.stopAnimating()
                         self.dibujarInvernaderos()
                     }
@@ -774,6 +782,26 @@ class InvernaderosViewController: UIViewController {
         else if(invs[0]==5000){
             btn0.tag = 5000
             imgn0.image = UIImage(imageLiteralResourceName: "PEP")
+        }
+        else if(invs[0]==6000){
+            btn0.tag = 6000
+            imgn0.image = UIImage(imageLiteralResourceName: "ESP")
+        }
+        else if(invs[0]==7000){
+            btn0.tag = 7000
+            imgn0.image = UIImage(imageLiteralResourceName: "ARA")
+        }
+        else if(invs[0]==8000){
+            btn0.tag = 8000
+            imgn0.image = UIImage(imageLiteralResourceName: "FRA")
+        }
+        else if(invs[0]==9000){
+            btn0.tag = 9000
+            imgn0.image = UIImage(imageLiteralResourceName: "ZAR")
+        }
+        else if(invs[0]==10000){
+            btn0.tag = 10000
+            imgn0.image = UIImage(imageLiteralResourceName: "FRE")
         }
         else{
             btn0.tag = invs[0]
